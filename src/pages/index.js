@@ -63,7 +63,7 @@ const Blog = () => {
               </div>
               <div className={`px-5 ${view == 'list'?'w-2/3 ':''}`}>
                 <h2 className="font-bold mt-4 text-center">
-                  <Link to={`/${edge.node.slug}/`}>{edge.node.title}</Link>
+                  <span to={`/${edge.node.slug}/`}>{edge.node.title}</span>
                 </h2>
                 <div className="meta">
                   <span>Posted on {edge.node.publishedDate}</span>
