@@ -4,11 +4,12 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Blog Site`,
+    title: `Blog de Raul`,
     description: `Write your site description here!`,
     author: `@ibaslogic`,
   },
   plugins: [
+    'gatsby-plugin-postcss',
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
     {

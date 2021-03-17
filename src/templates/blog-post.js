@@ -5,12 +5,16 @@ import Layout from "../components/layout"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faAngleLeft
+} from '@fortawesome/free-solid-svg-icons'
 
 export const query = graphql`
   query($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
       title
-      publishedDate(formatString: "Do MMMM, YYYY")
+      publishedDate(formatString: "DD MMM YYYY")
       featuredImage {
         fluid(maxWidth: 750) {
           ...GatsbyContentfulFluid
@@ -37,25 +41,31 @@ const BlogPost = props => {
   return (
     <Layout>
       <SEO title={props.data.contentfulBlogPost.title} />
-      <Link to="/blog/">Visit the Blog Page</Link>
-      <div className="content">
-        <h1>{props.data.contentfulBlogPost.title}</h1>
-        <span className="meta">
-          Posted on {props.data.contentfulBlogPost.publishedDate}
-        </span>
+      <div className="p-4">
+        <Link className="bg-red-500 text-white rounded-full px-4 py-1 ml-12 mt-2 hover:bg-white hover:text-red-500  hover:border-red-500" to="/"><FontAwesomeIcon icon={faAngleLeft} size="1x" /> Volver</Link>
+        </div>
+      <div className="flex justify-center ">
+        <div className="w-1/2">
+          <h1 className="text-center font-bold text-xl">{props.data.contentfulBlogPost.title}</h1>
+          <span className="text-center block my-6">
+            Publicado el {props.data.contentfulBlogPost.publishedDate}
+          </span>
 
-        {props.data.contentfulBlogPost.featuredImage && (
-          <Img
-            className="featured"
-            fluid={props.data.contentfulBlogPost.featuredImage.fluid}
-            alt={props.data.contentfulBlogPost.title}
-          />
-        )}
+          {props.data.contentfulBlogPost.featuredImage && (
+            <Img
+              className="rounded-lg"
+              fluid={props.data.contentfulBlogPost.featuredImage.fluid}
+              alt={props.data.contentfulBlogPost.title}
+            />
+          )}
 
-        {documentToReactComponents(
-          props.data.contentfulBlogPost.body.json,
-          options
-        )}
+          <div className="py-10">
+          {documentToReactComponents(
+            props.data.contentfulBlogPost.body.json,
+            options
+          )}
+          </div>
+        </div>
       </div>
     </Layout>
   )

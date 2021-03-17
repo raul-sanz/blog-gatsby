@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* @font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/Black.ttf"),url('../fonts/Montserrat/Bold.ttf'),url('../fonts/Montserrat/ExtraBold.ttf'),url('../fonts/Montserrat/ExtraLight.ttf'),url('../fonts/Montserrat/Light.ttf'),url('../fonts/Montserrat/Medium.ttf'),url('../fonts/Montserrat/Regular.ttf'),url('../fonts/Montserrat/SemiBold.ttf'),url('../fonts/Montserrat/Thin.ttf')
+} */
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
