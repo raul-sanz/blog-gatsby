@@ -42,7 +42,7 @@ const Blog = () => {
     <Layout>
       <SEO title="Blog" />
       <div>
-        <p className="text-center font-thin text-md border border-gray-200">Bienvenido a mi blog personal, en el cual encontraras temas relacionado con la programación web y algo mas</p>
+        <p className="text-center font-thin text-md border border-gray-200">Bienvenido a mi blog personal, en el cual encontraras temas relacionado con la programación web y algo mas y mas y mas</p>
       </div>
       <div className="flex justify-end px-12">
         {view == 'grid' && <button className="bg-white shadow-md px-4 py-1 rounded-full hover:bg-gray-200" onClick={()=>{setView('list')}}>Ver en lista <FontAwesomeIcon icon={faList} size="1x" /></button>}
