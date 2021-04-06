@@ -15,14 +15,14 @@ jobs:
           node-version: 12.x
 
       - name: Install dependencies
-        run: npm install
+        run: yarn
 
       - name: Build gatsby
-        run: npm run build
+        run: yarn build
         env:
           CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
           CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
-          
+
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.1
         with:
